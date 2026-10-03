@@ -1,29 +1,17 @@
-<!doctype html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>謝謝有你｜瑪奇 Mobile 助手</title>
-  <link rel="icon" href="./assets/compass.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./support.css"><script defer src="./support.js"></script>
-</head>
-<body>
-<header><a class="brand" href="./index.html"><img src="./assets/compass.svg" width="32" height="32" alt="">瑪奇 Mobile 助手</a><a href="./index.html">回到冒險手札 ↗</a></header>
-<main>
-  <section class="story"><p class="eyebrow">A LITTLE THANK YOU</p><h1>這段冒險，<br>謝謝有你。</h1><p class="lead">如果這個小助手，讓你的冒險輕鬆了一點，<br>歡迎留下一點心意，支持後續的開發與維護。</p><img class="forest" src="./assets/forest.svg" alt="森林小徑與營地插畫"><p class="aside">助手免費使用，贊助完全自願。<br>不論有沒有贊助，都謝謝你願意使用。</p></section>
-  <section class="card" aria-labelledby="support-title"><p class="eyebrow">給開發者的一點心意</p><h2 id="support-title">謝謝開發者，把助手做出來。</h2>
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>支持開發｜瑪奇 Mobile 助手</title><link rel="stylesheet" href="support.css"><script defer src="support.js"></script><body class="donate-page" data-theme="day"><header class="donate-header"><a class="brand" href="./index.html"><img src="assets/compass.svg" alt="">瑪奇 Mobile 助手</a><a class="return-link" href="./index.html">回到冒險手札 ↗</a><button class="theme-switch" id="theme-toggle" type="button" aria-pressed="false">切換月夜</button></header><main class="donate-layout"><img class="paper-corner tl" src="assets/ornaments/corner-day.svg" alt=""><img class="paper-corner tr" src="assets/ornaments/corner-day.svg" alt=""><img class="paper-corner bl" src="assets/ornaments/corner-day.svg" alt=""><img class="paper-corner br" src="assets/ornaments/corner-day.svg" alt=""><section class="donate-intro"><p class="eyebrow">Mabinogi mobile helper</p><h1>支持每一段冒險</h1><h2>請開發者喝杯咖啡</h2><p class="lead">小小的心意，讓助手持續成長。<br>用於軟體開發、維護與網站營運。</p><img class="art-divider" src="assets/ornaments/divider-day.svg" alt=""></section><section class="donate-payment" aria-labelledby="support-title"><h2 id="support-title">一次性贊助</h2><p class="payment-intro">用一份心意，支持開發者持續更新。</p>
   <div class="methods" role="group" aria-label="贊助方式"><button type="button" data-method="paypal" aria-pressed="true">PayPal</button><button type="button" data-method="crypto" aria-pressed="false">加密貨幣</button></div>
   <div id="paypal-panel">
     <p class="hint">選一份心意 · 新台幣 TWD</p>
     <div class="amounts" role="group" aria-label="贊助金額">
-      <button type="button" data-amount="100" aria-pressed="true"><strong>NT$100 <span>☕</span></strong><span>謝謝開發者做這個助手，請開發者喝杯咖啡</span></button>
-      <button type="button" data-amount="300" aria-pressed="false"><strong>NT$300 <span>🍢</span></strong><span>幫我省了不少時間，請開發者吃點宵夜</span></button>
-      <button type="button" data-amount="500" aria-pressed="false"><strong>NT$500 <span>🍲</span></strong><span>謝謝開發者一直用心更新，請開發者吃頓好的</span></button>
-      <button type="button" data-amount="1000" aria-pressed="false"><strong>NT$1,000 <span>💛</span></strong><span>真的幫了我很多，一點心意請開發者收下</span></button>
-      <button type="button" data-amount="custom" aria-pressed="false" class="wide"><strong>自行輸入 <span>🌱</span></strong><span>小小心意，謝謝開發者的付出</span></button>
+      <button type="button" data-amount="100" aria-pressed="true"><strong>NT$100 <img class="amount-icon" src="assets/icons/coffee-128.webp" width="32" height="32" alt=""></strong><span>謝謝開發者做這個助手，請開發者喝杯咖啡</span></button>
+      <button type="button" data-amount="300" aria-pressed="false"><strong>NT$300 <img class="amount-icon" src="assets/icons/snack-128.webp" width="32" height="32" alt=""></strong><span>幫我省了不少時間，請開發者吃點宵夜</span></button>
+      <button type="button" data-amount="500" aria-pressed="false"><strong>NT$500 <img class="amount-icon" src="assets/icons/meal-128.webp" width="32" height="32" alt=""></strong><span>謝謝開發者一直用心更新，請開發者吃頓好的</span></button>
+      <button type="button" data-amount="1000" aria-pressed="false"><strong>NT$1,000 <img class="amount-icon" src="assets/icons/heart-128.webp" width="32" height="32" alt=""></strong><span>真的幫了我很多，一點心意請開發者收下</span></button>
+      <button type="button" data-amount="custom" aria-pressed="false" class="wide"><strong>自行輸入 <img class="amount-icon" src="assets/icons/sprout-128.webp" width="32" height="32" alt=""></strong><span>小小心意，謝謝開發者的付出</span></button>
     </div>
     <div id="custom-field" hidden><label for="custom-amount">贊助金額（新台幣）</label><input id="custom-amount" type="number" min="1" step="1" inputmode="numeric" placeholder="請輸入整數金額"><p id="amount-error" role="status"></p></div>
     <p id="selection" class="selection" aria-live="polite">這份心意：NT$100</p>
-    <button class="primary" type="button" disabled>PayPal 收款連結尚未設定</button><p class="fine">目前為頁面預覽，尚無法透過此按鈕付款。</p>
+    <a id="paypal-checkout" class="primary" target="_blank" rel="noopener noreferrer" aria-disabled="true">透過 PayPal 支持開發</a><p class="fine">以新台幣（TWD）前往 PayPal 確認金額與收款人；是否可付款以 PayPal 顯示為準。本頁不會確認付款或入帳。</p>
   </div>
   <div id="crypto-panel" hidden>
     <p class="hint">選擇幣種 · 透過錢包或交易所轉帳</p><div class="coins" role="group" aria-label="加密貨幣幣種"><button type="button" data-coin="USDT" aria-pressed="true">USDT</button><button type="button" data-coin="USDC" aria-pressed="false">USDC</button></div>
@@ -34,7 +22,4 @@
     <p class="fine">此頁提供收款資訊，不會自動確認入帳。<a href="https://www.bitopro.com/ns/fees?fee-type=depoist-withdrawal" target="_blank" rel="noopener noreferrer">BitoPro 費用與限制 ↗</a></p>
   </div>
   <p class="thanks">一點心意，一份繼續更新的動力。謝謝你。</p>
-  </section>
-</main><footer>非官方玩家工具 · 自願支持軟體開發</footer>
-<noscript>請啟用 JavaScript 以切換贊助方式。PayPal 目前尚未設定。</noscript>
-</body></html>
+  </section><figure class="donate-art"><img class="forest" src="assets/illustration/backpack-coffee-960.webp" width="960" height="640" alt="森林旅人的背包、咖啡與冒險手札"><figcaption>助手免費使用，贊助完全自願。<br>不論有沒有贊助，都謝謝你願意使用。</figcaption></figure></main><footer class="donate-footer">非官方玩家工具 · 自願支持軟體開發</footer><noscript>請啟用 JavaScript 以選擇金額及贊助方式。</noscript></body></html>
