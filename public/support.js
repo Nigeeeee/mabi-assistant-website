@@ -1,0 +1,38 @@
+'use strict';
+const all = selector => Array.from(document.querySelectorAll(selector));
+function select(buttons, active) { buttons.forEach(b => b.setAttribute('aria-pressed', String(b === active))); }
+const methods = all('[data-method]');
+methods.forEach(button => button.addEventListener('click', () => {
+  select(methods, button);
+  document.querySelector('#paypal-panel').hidden = button.dataset.method !== 'paypal';
+  document.querySelector('#crypto-panel').hidden = button.dataset.method !== 'crypto';
+}));
+const amounts = all('[data-amount]');
+const custom = document.querySelector('#custom-amount');
+function updateCustom() {
+  const value = Number(custom.value);
+  const valid = custom.value.trim() !== '' && Number.isSafeInteger(value) && value > 0;
+  document.querySelector('#selection').textContent = valid ? `這份心意：NT$${value.toLocaleString('en-US')}` : '請輸入你的贊助金額';
+  document.querySelector('#amount-error').textContent = custom.value && !valid ? '請輸入大於零的整數金額。' : '';
+}
+amounts.forEach(button => button.addEventListener('click', () => {
+  select(amounts, button);
+  const isCustom = button.dataset.amount === 'custom';
+  document.querySelector('#custom-field').hidden = !isCustom;
+  if (isCustom) { updateCustom(); custom.focus(); }
+  else document.querySelector('#selection').textContent = `這份心意：NT$${Number(button.dataset.amount).toLocaleString('en-US')}`;
+}));
+custom.addEventListener('input', updateCustom);
+const coins = all('[data-coin]');
+coins.forEach(button => button.addEventListener('click', () => {
+  select(coins, button);
+  document.querySelector('#coin-title').textContent = button.dataset.coin;
+  document.querySelector('#transfer-title').textContent = `請只轉入 ${button.dataset.coin} · BEP20`;
+  document.querySelector('#copy-status').textContent = '';
+}));
+document.querySelector('#copy-address').addEventListener('click', async () => {
+  const address = document.querySelector('#wallet-address');
+  const status = document.querySelector('#copy-status');
+  try { await navigator.clipboard.writeText(address.value); status.textContent = '已複製收款地址，轉帳前請再核對幣種與 BEP20 網路。'; }
+  catch { address.focus(); address.select(); status.textContent = '請手動複製已選取的完整地址。'; }
+});

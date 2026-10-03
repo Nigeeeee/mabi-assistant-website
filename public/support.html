@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>謝謝有你｜瑪奇 Mobile 助手</title>
+  <link rel="icon" href="./assets/compass.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./support.css"><script defer src="./support.js"></script>
+</head>
+<body>
+<header><a class="brand" href="./index.html"><img src="./assets/compass.svg" width="32" height="32" alt="">瑪奇 Mobile 助手</a><a href="./index.html">回到冒險手札 ↗</a></header>
+<main>
+  <section class="story"><p class="eyebrow">A LITTLE THANK YOU</p><h1>這段冒險，<br>謝謝有你。</h1><p class="lead">如果這個小助手，讓你的冒險輕鬆了一點，<br>歡迎留下一點心意，支持後續的開發與維護。</p><img class="forest" src="./assets/forest.svg" alt="森林小徑與營地插畫"><p class="aside">助手免費使用，贊助完全自願。<br>不論有沒有贊助，都謝謝你願意使用。</p></section>
+  <section class="card" aria-labelledby="support-title"><p class="eyebrow">給開發者的一點心意</p><h2 id="support-title">謝謝開發者，把助手做出來。</h2>
+  <div class="methods" role="group" aria-label="贊助方式"><button type="button" data-method="paypal" aria-pressed="true">PayPal</button><button type="button" data-method="crypto" aria-pressed="false">加密貨幣</button></div>
+  <div id="paypal-panel">
+    <p class="hint">選一份心意 · 新台幣 TWD</p>
+    <div class="amounts" role="group" aria-label="贊助金額">
+      <button type="button" data-amount="100" aria-pressed="true"><strong>NT$100 <span>☕</span></strong><span>謝謝開發者做這個助手，請開發者喝杯咖啡</span></button>
+      <button type="button" data-amount="300" aria-pressed="false"><strong>NT$300 <span>🍢</span></strong><span>幫我省了不少時間，請開發者吃點宵夜</span></button>
+      <button type="button" data-amount="500" aria-pressed="false"><strong>NT$500 <span>🍲</span></strong><span>謝謝開發者一直用心更新，請開發者吃頓好的</span></button>
+      <button type="button" data-amount="1000" aria-pressed="false"><strong>NT$1,000 <span>💛</span></strong><span>真的幫了我很多，一點心意請開發者收下</span></button>
+      <button type="button" data-amount="custom" aria-pressed="false" class="wide"><strong>自行輸入 <span>🌱</span></strong><span>小小心意，謝謝開發者的付出</span></button>
+    </div>
+    <div id="custom-field" hidden><label for="custom-amount">贊助金額（新台幣）</label><input id="custom-amount" type="number" min="1" step="1" inputmode="numeric" placeholder="請輸入整數金額"><p id="amount-error" role="status"></p></div>
+    <p id="selection" class="selection" aria-live="polite">這份心意：NT$100</p>
+    <button class="primary" type="button" disabled>PayPal 收款連結尚未設定</button><p class="fine">目前為頁面預覽，尚無法透過此按鈕付款。</p>
+  </div>
+  <div id="crypto-panel" hidden>
+    <p class="hint">選擇幣種 · 透過錢包或交易所轉帳</p><div class="coins" role="group" aria-label="加密貨幣幣種"><button type="button" data-coin="USDT" aria-pressed="true">USDT</button><button type="button" data-coin="USDC" aria-pressed="false">USDC</button></div>
+    <div class="network"><strong id="coin-title">USDT</strong><span>網路：BEP20（BNB Smart Chain）</span></div>
+    <img class="qr" src="./assets/support-wallet.png" width="210" height="210" alt="BEP20 收款地址 QR Code，請在轉帳平台另外選擇正確幣種與網路">
+    <p class="qr-note">掃描取得收款地址</p><label for="wallet-address">收款地址</label><div class="address-row"><textarea id="wallet-address" rows="2" readonly spellcheck="false" aria-label="BEP20 收款地址">0x8f85f7cae8ea536e6cf32973664490b5b13a9d5d</textarea><button id="copy-address" type="button">複製</button></div><p id="copy-status" role="status"></p>
+    <div class="transfer-note"><strong id="transfer-title">請只轉入 USDT · BEP20</strong><p>請在轉出平台自行輸入贊助數量。上方 PayPal 的新台幣金額不會換算或套用到這裡。</p><p>QR Code 只包含地址，不包含幣種、網路或金額；送出前請核對這三項及平台最低加值量、手續費。</p></div>
+    <p class="fine">此頁提供收款資訊，不會自動確認入帳。<a href="https://www.bitopro.com/ns/fees?fee-type=depoist-withdrawal" target="_blank" rel="noopener noreferrer">BitoPro 費用與限制 ↗</a></p>
+  </div>
+  <p class="thanks">一點心意，一份繼續更新的動力。謝謝你。</p>
+  </section>
+</main><footer>非官方玩家工具 · 自願支持軟體開發</footer>
+<noscript>請啟用 JavaScript 以切換贊助方式。PayPal 目前尚未設定。</noscript>
+</body></html>

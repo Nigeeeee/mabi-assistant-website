@@ -1,2 +1,5 @@
-# mabi-assistant-website
-瑪奇 Mobile 助手｜非官方玩家工具介紹網站
+# 瑪奇 Mobile 助手網站
+
+非官方玩家工具介紹與支持開發網站。此儲存庫只包含靜態網站，不包含助手程式或使用者資料。
+
+GitHub Pages 使用 Actions 手動發布，網站來源為 public/。下載尚未發布。

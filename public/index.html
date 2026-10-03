@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="非官方玩家工具：查詢多角色背包、角色倉庫與共同倉庫，將冒險紀錄留在自己的電腦。">
+  <meta name="color-scheme" content="light">
+  <title>玩家助手｜冒險手札</title>
+  <link rel="icon" href="./assets/compass.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./site-config.js"></script><script defer src="./site.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳至主要內容</a>
+<header class="header"><a class="brand" href="#" aria-label="回到首頁"><img src="./assets/compass.svg" width="38" height="38" alt=""><span data-name>玩家助手</span><small>ADVENTURER’S COMPANION</small></a><nav aria-label="主要導覽"><a href="#features">功能介紹</a><a href="#guide">使用手札</a><a href="#journal">更新紀錄</a><a href="./support.html">支持開發</a><a class="nav-download" href="#download">取得助手 <span>↗</span></a></nav></header>
+<main id="main">
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-copy"><p class="eyebrow"><span class="line"></span> 給每一位，帶著滿滿行囊的冒險者</p><h1 id="hero-title">把行囊整理好，<br>再去<span class="em">冒險。</span></h1><p class="intro">素材放在哪個角色？倉庫還有多少存貨？<br>讓背包與倉庫的紀錄，成為隨手可翻的冒險手札。</p><div class="actions"><a class="button" href="#download">查看下載資訊 <span>↓</span></a><a class="text-link" href="#features">翻開功能手札 <span>↗</span></a></div><p class="hero-note">Windows x64 <i>·</i> 可攜式資料夾 <i>·</i> 非官方玩家工具</p></div>
+  <div class="hero-art"><img src="./assets/forest.svg" alt="原創插畫：通往森林山丘的蜿蜒小徑、帳篷與遠方的晨光" width="720" height="650"><div class="art-caption"><span>FIELD NOTES / 001</span><span>下一段旅程，從整理開始。</span></div></div>
+</section>
+<div class="ribbon"><span>隨手查找<span class="ribbon-sub"> YOUR INVENTORY</span></span><b>✦</b><span>分角色記錄<span class="ribbon-sub"> YOUR CHARACTERS</span></span><b>✦</b><span>資料留在本機<span class="ribbon-sub"> YOUR OWN JOURNAL</span></span></div>
+<section id="features" class="section">
+  <div class="section-head"><div><p class="eyebrow">01 / 冒險，不必反覆翻找</p><h2>每個行囊，都有一頁紀錄。</h2></div><p>以下功能已在現有專案實作。<br>查詢結果以最近一次成功同步為準。</p></div>
+  <div class="feature-grid">
+    <article class="feature"><span class="number">I.</span><span class="status">已實作</span><h3>多角色背包</h3><p>切換角色，查看各自已同步的道具。用名稱搜尋與分類篩選，找回散落在不同角色身上的物品。</p><div class="mini"><span>旅人 A</span><span>旅人 B</span><span>旅人 C</span></div></article>
+    <article class="feature"><span class="number">II.</span><span class="status">已實作</span><h3>角色倉庫</h3><p>將角色保管箱與目前背包並列查看。進入遊戲開啟對應保管箱，取得該角色的倉庫紀錄。</p><div class="mini ruled"><span>角色保管箱</span><b>⇄</b><span>目前背包</span></div></article>
+    <article class="feature"><span class="number">III.</span><span class="status">已實作</span><h3>共同倉庫</h3><p>切換至公用保管箱，查看同帳號已同步的共用物品。尚未取得資料時保留待同步提示。</p><div class="mini ruled"><span>同帳號角色</span><b>→</b><span>公用保管箱</span></div></article>
+  </div>
+  <p class="fine">上方為功能示意，並非遊戲截圖或真實角色資料。遊戲版本變動可能影響同步；完整遊戲情境驗收仍待完成。</p>
+  <div class="roadmap"><span class="status planned">規劃中</span><strong>啟動時檢查更新</strong><span>背景檢查、簽章驗證與安全更新尚未完成，目前仍採手動更新。</span></div>
+</section>
+<section id="download" class="download-section"><div class="download-copy"><p class="eyebrow">02 / 為下一次登入做好準備</p><h2>你的手札，<br>跟著資料夾一起走。</h2><p>完整解壓縮，即可開始。可攜式版本包含 .NET 執行元件，不需另裝開發工具。</p><p class="download-foot">網路擷取需要另行安裝 <a href="https://npcap.com/#download" target="_blank" rel="noopener noreferrer">Npcap ↗</a>。助手不代為安裝；缺少 Npcap 時停用擷取，仍可查閱既有資料。</p></div><div class="download-card"><div class="card-top"><span>WINDOWS / PORTABLE</span><span class="version" data-version>V0.8.0</span></div><h3>Windows x64 可攜式版</h3><p id="release-state">本機已有版本 · 公開下載尚未發布</p><dl><div><dt>目標平台</dt><dd>Windows 10 / 11 · x64</dd></div><div><dt>本機驗證</dt><dd>Windows 10 x64</dd></div><div><dt>尚待驗證</dt><dd>Windows 11、乾淨電腦</dd></div></dl><button id="download-button" class="button download-button" disabled>尚未發布</button><p class="fine">正式 ZIP 將透過 GitHub Releases 提供。<br>目前不提供 ARM64、macOS 或 Linux 下載。</p></div></section>
+<section id="guide" class="section"><div class="section-head"><div><p class="eyebrow">03 / 第一次使用</p><h2>四步，整理你的冒險日常。</h2></div><span class="handwritten">留一份紀錄，多一點從容。</span></div><ol class="steps"><li><span>01</span><h3>完整解壓縮</h3><p>取得正式 ZIP 後，解壓到可寫入的本機資料夾。保留所有 DLL、素材及語言資源，不要直接在 ZIP 裡執行。</p></li><li><span>02</span><h3>啟動助手</h3><p>整理版請開啟根目錄的「啟動助手.exe」。舊版請依包內使用說明啟動；每台電腦的 Npcap 需另外安裝。</p></li><li><span>03</span><h3>取得首次同步</h3><p>登入角色或切換地圖，等待完整同步。開啟遊戲內角色／公用保管箱同步倉庫。未收到資料時不會當成零。</p></li><li><span>04</span><h3>保存與搬移</h3><p>先正常關閉助手，再備份或複製整個資料夾到另一台電腦。不要只搬 EXE，或在程式執行時搬動存檔。</p></li></ol><details><summary>資料存在哪裡？搬移前應注意什麼？ <span>＋</span></summary><div class="detail-body"><p>V0.8.0 整理版的程式位於 app，角色、物品、設定、備份與日誌位於 userdata。早期 V0.8.0 使用根目錄的 data、settings 等資料夾；請依隨包說明遷移，不直接混合已有資料。</p><p>資料及備份未加密，助手不要求遊戲登入密碼。分享發布包時不要附上自己的 userdata 或舊版 data。看不到同步時，先在「偵測設定」確認網卡與擷取狀態。</p></div></details></section>
+<section id="journal" class="section journal"><div><p class="eyebrow">04 / 版本手札</p><h2>每一次整理，<br>都留下足跡。</h2><p>依現有發布資料整理。<br>本機版本不代表已公開發布。</p></div><div class="timeline"><article><div class="release-label"><h3>V0.8.0</h3><span class="status">本機可攜式版本</span></div><p>以 Windows x64 自包含資料夾發布，納入執行元件；帳號、角色、物品與設定集中保存，提供安全寫入及備份機制。</p><p>同版本另有目錄整理版：主程式與執行元件移至 app，個人資料集中至 userdata，根目錄提供啟動器與使用說明。</p></article><article><div class="release-label"><h3>V0.7.3</h3><span>既有發布紀錄</span></div><p>日夜森林介面、帳號及角色整理、每日／每週挑戰進度、物品圖片與釘選篩選，以及召喚結界提醒。</p></article><p class="fine">僅列出已有說明文件支持的版本內容；後續開發中的介面修正未列為新發布版本。</p></div></section>
+<aside class="notice"><span>✧</span><div><strong>陪你整理冒險的非官方工具</strong><p>本工具由玩家製作，與遊戲官方無隸屬或背書關係。不提供「保證不封號」承諾；使用前請自行了解並遵守遊戲服務條款。本網站僅提供介紹與發布資訊，不讀取角色資料。</p></div></aside>
+</main><footer><a class="brand" href="#"><img src="./assets/compass.svg" width="28" height="28" alt=""><span data-name>玩家助手</span></a><span>願每一次出發，都輕裝一些。</span><a href="#main">回到頂端 ↑</a></footer>
+<noscript><p class="noscript">此展示頁的名稱與版本集中由 JavaScript 設定；下載目前尚未發布。其餘內容可正常閱讀。</p></noscript>
+</body></html>
