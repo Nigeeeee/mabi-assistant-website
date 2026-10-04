@@ -1,0 +1,31 @@
+/* Art source: output/website-panorama-v1/ENGINEERING.md.
+   The landscape scales independently of readable content and controls. */
+body:has(.panorama-stage){--scene-base:#f6f1e3;--scene:url('./assets/background/forest-panorama-day-1440.webp');background:var(--scene-base)}
+body[data-theme="night"]:has(.panorama-stage){--scene-base:#142d24;--scene:url('./assets/background/forest-panorama-night-1440.webp');background:var(--scene-base)}
+.panorama-stage{position:relative;isolation:isolate;width:100%;min-height:50vw;padding-top:16.5vw;padding-bottom:1px}
+.panorama-stage::before{content:"";position:absolute;z-index:-1;inset:0 0 auto;height:50vw;background-image:linear-gradient(to bottom,transparent 65%,var(--scene-base) 100%),var(--scene);background-size:100% 100%,100% auto;background-position:center top;background-repeat:no-repeat;pointer-events:none}
+.panorama-banner{display:none}
+.panorama-stage .site-main{max-width:1440px;width:calc(100% - 64px);padding:0;margin:0 auto 48px}
+.panorama-stage .hero{background:transparent;border:0;box-shadow:none;padding:24px 0 48px;gap:40px;min-height:0;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+.panorama-stage .hero>div:first-child{max-width:32rem;padding:28px;border-radius:12px;background:linear-gradient(110deg,#fffdf6fa 60%,#f6f1e3e8);box-shadow:0 8px 32px #233d3210}
+.panorama-stage .hero>div{min-width:0}
+.panorama-stage .hero>div:last-child>.fine{display:table;padding:4px 12px;background:var(--paper);border-radius:4px}
+body[data-theme="night"] .panorama-stage .hero>div:first-child{background:linear-gradient(110deg,#142d24fa 60%,#142d24ed);color:#fff4db}
+body[data-theme="night"] .panorama-stage .hero>div:first-child :is(.eyebrow,.fine,.lead,.text-link){color:#ebdfc2}
+.panorama-stage .donate-layout{width:calc(100% - 64px);max-width:1200px;margin:0 auto 32px}
+@media(min-width:1441px){body:has(.panorama-stage){--scene:url('./assets/background/forest-panorama-day-1920.webp')}body[data-theme="night"]:has(.panorama-stage){--scene:url('./assets/background/forest-panorama-night-1920.webp')}}
+@media(min-width:1921px){body:has(.panorama-stage){--scene:url('./assets/background/forest-panorama-day-2560.webp')}body[data-theme="night"]:has(.panorama-stage){--scene:url('./assets/background/forest-panorama-night-2560.webp')}}
+@media(max-width:960px){
+ .panorama-stage{padding-top:0;min-height:0}
+ .panorama-stage::before{display:none}
+ .panorama-banner{display:block;position:relative;width:100%;aspect-ratio:2/1}
+ .panorama-banner::after{content:"";position:absolute;inset:65% 0 0;background:linear-gradient(transparent,var(--scene-base));pointer-events:none}
+ .panorama-banner img{display:block;width:100%;height:auto;aspect-ratio:2/1}
+ .panorama-banner .panorama-night,body[data-theme="night"] .panorama-banner .panorama-day{display:none}
+ body[data-theme="night"] .panorama-banner .panorama-night{display:block}
+ .panorama-stage .site-main{width:calc(100% - 32px);margin-bottom:24px}
+ .panorama-stage .hero{grid-template-columns:minmax(0,1fr);gap:24px;padding:0 0 28px}
+ .panorama-stage .hero>div:first-child{max-width:none;padding:24px}
+ .panorama-stage .donate-layout{width:calc(100% - 32px);margin:0 auto 24px;max-width:650px}
+}
+@media(max-width:390px){.panorama-stage .hero>div:first-child{padding:20px 16px}.panorama-stage .hero h1{font-size:30px}}

@@ -5,3 +5,9 @@
 
 .site-header{background:#254b3b;color:#fff8e5}.site-brand small{font-size:12px}.site-header .site-download{background:#e2c886;color:#233d32;border-color:#e2c886}.site-header .site-download:hover{background:#f0da9f;color:#233d32}.site-header .site-nav a:hover{color:#ffe4a0}.site-header .site-nav a[aria-current="page"]{border-color:#e2c886}.site-header :is(a,button):focus-visible{outline-color:#f3e3ac}.nav-toggle{display:none}.site-nav a{min-height:44px;display:flex;align-items:center}
 @media(max-width:960px){.js .nav-toggle{display:block;margin-left:auto}.js .site-header .site-nav{display:none}.js .site-header.menu-open .site-nav{display:flex;flex-direction:column;align-items:stretch}.site-header .site-nav a{justify-content:center}.header-actions{margin-left:auto}.site-header .site-brand{font-size:17px}.site-brand small{font-size:11px}}
+
+/* Full-width navigation, aligned with the panorama content. */
+.site-header{max-width:none;width:100%;padding-inline:max(32px,calc((100% - 1440px)/2))}
+@media(max-width:960px){.site-header{padding-inline:16px}}
+
+.site-header .site-brand img{width:48px;height:48px;object-fit:contain}
