@@ -2,6 +2,6 @@
 window.SITE_CONFIG = Object.freeze({
   name: '米列西安 Mobile 小助手',
   version: '0.8.0',
-  downloadUrl: '', // 尚無正式公開下載網址。填入 HTTPS GitHub Releases 資產網址。
+  downloadUrl: 'https://github.com/Nigeeeee/mabi-assistant-website/releases/download/v0.8.0/MMH-0.8.0-portable-win-x64.zip',
   architecture: 'Windows x64'
 });
