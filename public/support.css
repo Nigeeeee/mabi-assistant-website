@@ -31,3 +31,11 @@
 .donate-page .primary:hover:not(:disabled):not([aria-disabled="true"]){background:#304e69;color:#fff}
 .donate-page .primary:active:not(:disabled):not([aria-disabled="true"]){background:#1a3045;color:#fff}
 .donate-page .primary:is(:disabled,[aria-disabled="true"]){background:var(--disabled-bg);color:var(--disabled-text);border-color:#b6b8ac;cursor:not-allowed;box-shadow:none}
+
+
+#paypal-checkout{margin-top:20px}
+
+.donate-page{background-size:auto 900px;background-repeat:repeat-x;background-color:#eae8dc}.donate-layout::after{opacity:.035}.donate-intro h1,.donate-intro h2{font-family:"Noto Serif TC","PMingLiU",serif}.donate-intro h1{font-size:40px}.donate-page[data-theme="night"]{background-color:#10261d}.donate-page .site-footer{color:#f3eedb}.donate-page .site-header a{color:inherit}.donate-page .site-header .site-download{color:#233d32}
+@media(max-width:650px){.donate-intro h1{font-size:30px}.donate-page{background-size:auto 720px}}
+
+.donate-page{background-attachment:scroll;background-repeat:no-repeat}@media(max-width:650px){.donate-layout{width:calc(100% - 32px);margin-inline:auto;min-width:0}}
