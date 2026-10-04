@@ -29,3 +29,12 @@ body[data-theme="night"] .panorama-stage .hero>div:first-child :is(.eyebrow,.fin
  .panorama-stage .donate-layout{width:calc(100% - 32px);margin:0 auto 24px;max-width:650px}
 }
 @media(max-width:390px){.panorama-stage .hero>div:first-child{padding:20px 16px}.panorama-stage .hero h1{font-size:30px}}
+
+/* One CSS landscape per theme; hidden mobile banners make no image request. */
+@media(max-width:960px){
+ body:has(.panorama-stage){--scene:url('./assets/background/forest-panorama-day-960.webp')}
+ body[data-theme="night"]:has(.panorama-stage){--scene:url('./assets/background/forest-panorama-night-960.webp')}
+ .panorama-banner{background:var(--scene) center top/100% auto no-repeat}
+}
+.site-footer{flex-wrap:wrap}.art-usage{flex-basis:100%;font-size:12px;border-top:1px solid #ae925766;padding-top:12px}
+img[data-protected]{-webkit-user-drag:none;user-select:none}
