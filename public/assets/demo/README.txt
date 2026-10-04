@@ -1,0 +1,1 @@
+MMH actual application interface renders using fictional demo data only. No real accounts or characters. Overlay images combine WinForms control rendering and WebView2 CapturePreview at actual control positions.
