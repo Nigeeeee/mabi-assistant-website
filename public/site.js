@@ -15,7 +15,9 @@ function setTheme(night) {
     const link=img.closest('figure')?.querySelector('a');if(link)link.href=src;
     if(img.dataset.demo && !img.dataset.loaded)return;
     if(img.dataset.demo){img.sizes='(max-width: 650px) calc(100vw - 64px), (max-width: 960px) calc(100vw - 64px), 760px';img.srcset=`${src.replace('.webp','-640.webp')} 640w, ${src} ${img.getAttribute('width')}w`;}
-    img.src=src;
+    const source=img.closest('picture')?.querySelector('source');
+    if(source){const avif=src.replace('.webp','.avif');source.srcset=`${avif.replace('.avif','-640.avif')} 640w, ${avif} ${img.getAttribute('width')}w`;}
+    if(img.getAttribute('src')!==src)img.src=src;
   });
   document.querySelectorAll('a[href]').forEach(a=>{const u=new URL(a.href);if(u.origin===location.origin&&u.pathname.endsWith('.html')){u.searchParams.set('theme',night?'night':'day');a.href=u.href;}});
 }
