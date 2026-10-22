@@ -9,7 +9,8 @@
       <button type="button" data-amount="1000" aria-pressed="false"><strong>NT$1,000 <img class="amount-icon" src="assets/icons/heart-128.webp" width="32" height="32" alt=""></strong><span>真的幫了我很多，一點心意請開發者收下</span></button>
       <button type="button" data-amount="custom" aria-pressed="false" class="wide"><strong>自行輸入 <img class="amount-icon" src="assets/icons/sprout-128.webp" width="32" height="32" alt=""></strong><span>小小心意，謝謝開發者的付出</span></button>
     </div>
-    <a id="paypal-checkout" href="https://www.paypal.com/ncp/payment/N3HBNSU35WZ6E" class="primary" target="_blank" rel="noopener noreferrer">前往 PayPal 支持開發</a><p class="fine">以新台幣（TWD）前往 PayPal 確認金額與收款人；自行輸入的金額請填寫於 PayPal 表單。本頁不會確認付款或入帳。</p>
+    <div class="transfer-note" id="paypal-taiwan-notice" role="note"><strong>不支援台灣 PayPal 帳戶付款</strong><p>依 PayPal 台灣服務限制，目前不支援台灣 PayPal 帳戶間的付款。若使用台灣註冊的 PayPal 帳戶，將無法透過此方式贊助。</p></div>
+    <a id="paypal-checkout" aria-describedby="paypal-taiwan-notice" href="https://www.paypal.com/ncp/payment/N3HBNSU35WZ6E" class="primary" target="_blank" rel="noopener noreferrer">前往 PayPal 支持開發</a><p class="fine">以新台幣（TWD）前往 PayPal 確認金額與收款人；自行輸入的金額請填寫於 PayPal 表單。本頁不會確認付款或入帳。</p>
   </div>
   <div id="crypto-panel" hidden>
     <p class="hint">選擇幣種 · 透過錢包或交易所轉帳</p><div class="coins" role="group" aria-label="加密貨幣幣種"><button type="button" data-coin="USDT" aria-pressed="true">USDT</button><button type="button" data-coin="USDC" aria-pressed="false">USDC</button></div>
