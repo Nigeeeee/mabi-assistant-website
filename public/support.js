@@ -1,6 +1,6 @@
 'use strict';
 document.querySelectorAll('[data-name]').forEach(el => el.textContent = window.SITE_CONFIG.name);
-document.title = `支持開發｜${window.SITE_CONFIG.name}`;
+// Keep the page-specific search title declared in support.html.
 const all = selector => Array.from(document.querySelectorAll(selector));
 function select(buttons, active) { buttons.forEach(b => b.setAttribute('aria-pressed', String(b === active))); }
 const methods = all('[data-method]');
