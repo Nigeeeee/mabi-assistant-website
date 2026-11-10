@@ -39,3 +39,12 @@
 @media(max-width:650px){.donate-intro h1{font-size:30px}.donate-page{background-size:auto 720px}}
 
 .donate-page{background-attachment:scroll;background-repeat:no-repeat}@media(max-width:650px){.donate-layout{width:calc(100% - 32px);margin-inline:auto;min-width:0}}
+
+/* OEN review candidate: reuse the existing payment cards and notice style. */
+.oen-status{margin-top:20px}
+#oen-amount-error{font-size:13px;min-height:22px;margin:6px 0;color:#8b2c20;font-weight:700}
+#oen-amount-error:not(:empty){border-left:3px solid currentColor;padding:6px 10px}
+#oen-custom-amount[aria-invalid="true"]{border:2px solid #8b2c20}
+.oen-policy{margin-top:16px;overflow-wrap:anywhere}
+.methods button{min-width:0}
+@media(max-width:420px){.methods button{font-size:14px;padding:8px 4px;white-space:nowrap}}

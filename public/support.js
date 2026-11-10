@@ -6,10 +6,11 @@ function select(buttons, active) { buttons.forEach(b => b.setAttribute('aria-pre
 const methods = all('[data-method]');
 methods.forEach(button => button.addEventListener('click', () => {
   select(methods, button);
-  document.querySelector('#paypal-panel').hidden = button.dataset.method !== 'paypal';
-  document.querySelector('#crypto-panel').hidden = button.dataset.method !== 'crypto';
+  ['oen', 'paypal', 'crypto'].forEach(method => {
+    document.querySelector(`#${method}-panel`).hidden = button.dataset.method !== method;
+  });
 }));
-const amounts = all('[data-amount]');
+const amounts = all('#paypal-panel [data-amount]');
 // Hosted checkout IDs supplied by the account owner.
 const hostedIds = {
   '100': 'N3HBNSU35WZ6E',
@@ -27,6 +28,34 @@ amounts.forEach(button => button.addEventListener('click', () => {
   selectAmount(button.dataset.amount);
 }));
 selectAmount('100');
+
+// OEN is under account review. There is deliberately no checkout URL or payment handler.
+// Activation requires the owner's verified hosted link, public email, and hosted minimum.
+const oenAmounts = all('#oen-panel [data-oen-amount]');
+const oenCustomField = document.querySelector('#oen-custom-field');
+const oenCustomAmount = document.querySelector('#oen-custom-amount');
+const oenAmountError = document.querySelector('#oen-amount-error');
+const oenSelection = document.querySelector('#oen-selection');
+function showOenAmount(amount) {
+  const custom = amount === 'custom';
+  oenCustomField.hidden = !custom;
+  const raw = custom ? oenCustomAmount.value.trim() : amount;
+  const value = /^\d+$/.test(raw) ? Number(raw) : NaN;
+  const valid = Number.isSafeInteger(value) && value >= 30;
+  oenCustomAmount.setAttribute('aria-invalid', String(custom && !valid));
+  oenAmountError.textContent = custom && !valid ? '金額有誤：請輸入至少 NT$30 的新台幣整數金額。' : '';
+  oenSelection.textContent = valid
+    ? `已選 NT$${value.toLocaleString('en-US')} · 尚未開放付款`
+    : '請輸入至少 NT$30 · 尚未開放付款';
+}
+oenAmounts.forEach(button => button.addEventListener('click', () => {
+  select(oenAmounts, button);
+  showOenAmount(button.dataset.oenAmount);
+  if (button.dataset.oenAmount === 'custom') oenCustomAmount.focus();
+}));
+oenCustomAmount.addEventListener('input', () => showOenAmount('custom'));
+showOenAmount('100');
+
 const coins = all('[data-coin]');
 coins.forEach(button => button.addEventListener('click', () => {
   select(coins, button);
