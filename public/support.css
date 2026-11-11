@@ -48,3 +48,94 @@
 .oen-policy{margin-top:16px;overflow-wrap:anywhere}
 .methods button{min-width:0}
 @media(max-width:420px){.methods button{font-size:14px;padding:8px 4px;white-space:nowrap}}
+
+/* PayPal 視覺提案；整合時載入於 support.css 之後。僅作用於 PayPal。 */
+.donate-page #paypal-panel {
+  --pp-surface: #edf4fb;
+  --pp-card: #ffffff;
+  --pp-ink: #173550;
+  --pp-muted: #365672;
+  --pp-line: #9aafc3;
+  --pp-hover: #e0ebf6;
+  --pp-primary: #183e6a;
+  --pp-primary-hover: #245585;
+  --pp-focus: #a65b00;
+  color: var(--pp-ink);
+  background: var(--pp-surface);
+  border: 1px solid var(--pp-line);
+  border-radius: 12px;
+  padding: 16px;
+}
+.donate-page[data-theme="night"] #paypal-panel {
+  --pp-surface: #152b3c;
+  --pp-card: #1e394b;
+  --pp-ink: #f2f7fb;
+  --pp-muted: #c7d8e4;
+  --pp-line: #7698ae;
+  --pp-hover: #294b61;
+  --pp-primary: #1e5184;
+  --pp-primary-hover: #28669d;
+  --pp-focus: #ffd275;
+}
+.donate-page .methods button[data-method="paypal"][aria-pressed="true"] {
+  background: #183e6a;
+  color: #fff;
+}
+.donate-page .methods button[data-method="paypal"]:focus-visible,
+.donate-page #paypal-panel :is(button, a, input):focus-visible {
+  outline: 3px solid var(--pp-focus, #a65b00);
+  outline-offset: 3px;
+}
+.donate-page[data-theme="night"] .methods button[data-method="paypal"]:focus-visible {
+  outline-color: #a65b00; /* 方法列仍位於原本淺色面板。 */
+}
+.donate-page #paypal-panel :is(.hint, .fine, .transfer-note p) { color: var(--pp-muted); }
+.donate-page #paypal-panel .amounts button {
+  background: var(--pp-card);
+  color: var(--pp-ink);
+  border-color: var(--pp-line);
+}
+.donate-page #paypal-panel .amounts button > span { color: var(--pp-muted); }
+.donate-page #paypal-panel .amounts button:hover:not([aria-pressed="true"]):not(:disabled) {
+  background: var(--pp-hover);
+  border-color: var(--pp-primary-hover);
+}
+.donate-page #paypal-panel .amounts button[aria-pressed="true"] {
+  background: var(--pp-primary);
+  border-color: var(--pp-primary);
+  color: #fff;
+}
+.donate-page #paypal-panel .amounts button[aria-pressed="true"] > span { color: #f2f7fb; }
+.donate-page #paypal-panel .amounts button[aria-pressed="true"]::after {
+  background-color: var(--pp-primary);
+  border-color: var(--pp-surface);
+}
+.donate-page #paypal-panel .amounts button:disabled { opacity: .55; cursor: not-allowed; }
+.donate-page #paypal-panel .transfer-note {
+  color: var(--pp-ink);
+  background: var(--pp-card);
+  border-color: var(--pp-line);
+  margin-top: 12px;
+}
+.donate-page #paypal-checkout:not([aria-disabled="true"]):not(:disabled),
+.donate-page #paypal-checkout:visited:not([aria-disabled="true"]) {
+  background: var(--pp-primary);
+  color: #fff;
+}
+.donate-page #paypal-checkout:hover:not([aria-disabled="true"]):not(:disabled) { background: var(--pp-primary-hover); }
+.donate-page #paypal-checkout:active:not([aria-disabled="true"]):not(:disabled) { filter: brightness(.88); }
+@media (max-width: 440px) {
+  .donate-page #paypal-panel { padding: 12px; }
+  .donate-page #paypal-panel .amounts button { padding: 8px; }
+  .donate-page #paypal-panel .amounts strong {
+    font-size: 17px;
+    gap: 4px;
+    flex-wrap: wrap;
+    overflow-wrap: anywhere;
+  }
+  .donate-page #paypal-panel .amount-icon { width: 26px; height: 26px; }
+}
+@media (max-width: 375px) {
+  .donate-page #paypal-panel .amounts { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .donate-page #paypal-panel .amounts button { transition: none; } }
