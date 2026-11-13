@@ -1,0 +1,4 @@
+/game-message-settings/tw.json
+  Cache-Control: public, no-cache, max-age=0, must-revalidate
+  Content-Type: application/json; charset=utf-8
+  X-Content-Type-Options: nosniff
