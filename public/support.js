@@ -29,32 +29,36 @@ amounts.forEach(button => button.addEventListener('click', () => {
 }));
 selectAmount('100');
 
-// OEN is under account review. There is deliberately no checkout URL or payment handler.
-// Activation requires the owner's verified hosted link, public email, and hosted minimum.
+// Public payment links supplied by the merchant. OEN collects payment details.
 const oenAmounts = all('#oen-panel [data-oen-amount]');
-const oenCustomField = document.querySelector('#oen-custom-field');
-const oenCustomAmount = document.querySelector('#oen-custom-amount');
-const oenAmountError = document.querySelector('#oen-amount-error');
 const oenSelection = document.querySelector('#oen-selection');
-function showOenAmount(amount) {
-  const custom = amount === 'custom';
-  oenCustomField.hidden = !custom;
-  const raw = custom ? oenCustomAmount.value.trim() : amount;
-  const value = /^\d+$/.test(raw) ? Number(raw) : NaN;
-  const valid = Number.isSafeInteger(value) && value >= 30;
-  oenCustomAmount.setAttribute('aria-invalid', String(custom && !valid));
-  oenAmountError.textContent = custom && !valid ? '金額有誤：請輸入至少 NT$30 的新台幣整數金額。' : '';
-  oenSelection.textContent = valid
-    ? `已選 NT$${value.toLocaleString('en-US')} · 尚未開放付款`
-    : '請輸入至少 NT$30 · 尚未開放付款';
+const oenHostedCheckout = document.querySelector('#oen-hosted-checkout');
+const oenCheckoutNote = document.querySelector('#oen-checkout-note');
+
+function selectOenAmount(button) {
+  const url = new URL(button.dataset.oenCheckout);
+  if (url.origin !== 'https://starryweaver.oen.tw' ||
+      !/^\/payment-url\/[A-Za-z0-9]+$/.test(url.pathname) ||
+      url.username || url.password || url.search || url.hash) {
+    throw new Error('Invalid OEN payment link');
+  }
+
+  const custom = button.dataset.oenAmount === 'custom';
+  const amount = Number(button.dataset.oenAmount).toLocaleString('en-US');
+  oenHostedCheckout.href = url.href;
+  oenSelection.textContent = custom
+    ? '請在應援付款頁自行輸入金額'
+    : '已選 NT$' + amount;
+  oenCheckoutNote.textContent = custom
+    ? '每次最低 NT$30，請在應援付款頁輸入金額。'
+    : '每次最低 NT$30。請在應援付款頁確認金額後付款。';
 }
+
 oenAmounts.forEach(button => button.addEventListener('click', () => {
+  selectOenAmount(button);
   select(oenAmounts, button);
-  showOenAmount(button.dataset.oenAmount);
-  if (button.dataset.oenAmount === 'custom') oenCustomAmount.focus();
 }));
-oenCustomAmount.addEventListener('input', () => showOenAmount('custom'));
-showOenAmount('100');
+selectOenAmount(oenAmounts.find(button => button.getAttribute('aria-pressed') === 'true'));
 
 const coins = all('[data-coin]');
 coins.forEach(button => button.addEventListener('click', () => {
